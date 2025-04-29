@@ -4,9 +4,10 @@
     <name>YAML Runner</name>
     <vendor email="60159987@qq.com" url="http://www.mm.com">yamlrunner</vendor>
 
-    <description><![CDATA[在YAML文件中添加运行按钮，点击后可以直接运行或调试。
-    会运行指定java 的main 方法, 将yaml 的路径传递到args 参数里面.
-    在22版本的IDEA, 也支持在文件夹上运行一批任务, 这个项目主要是用于yaml 类型测试用例的调试等]]></description>
+    <description><![CDATA[Adds run buttons to YAML files. Click to run or debug directly.
+    It executes the specified Java main method, passing the YAML file path as an argument.
+    In IDEA version 22 and above, it also supports running a batch of tasks on folders,
+    mainly used for debugging YAML-based test cases.]]></description>
 
     <!-- 添加IDE兼容性范围 -->
     <idea-version since-build="221" until-build="243.*"/>
