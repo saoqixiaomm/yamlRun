@@ -1,4 +1,4 @@
-package com.example.yamlrunner;
+package com.mm.yamlrunner;
 
 import com.intellij.execution.lineMarker.ExecutorAction;
 import com.intellij.execution.lineMarker.RunLineMarkerContributor;

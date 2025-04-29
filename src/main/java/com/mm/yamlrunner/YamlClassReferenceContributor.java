@@ -1,4 +1,4 @@
-package com.example.yamlrunner;
+package com.mm.yamlrunner;
 
 import com.intellij.patterns.PlatformPatterns;
 import com.intellij.psi.*;

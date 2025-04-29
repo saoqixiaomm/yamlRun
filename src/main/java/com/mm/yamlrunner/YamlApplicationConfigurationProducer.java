@@ -1,4 +1,4 @@
-package com.example.yamlrunner;
+package com.mm.yamlrunner;
 
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.actions.RunConfigurationProducer;
