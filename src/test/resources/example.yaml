@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-config
+  namespace: default
+data:
+  test-key: test-value
+  script: |
+    #!/bin/bash
+    echo "Hello from YAML!" 

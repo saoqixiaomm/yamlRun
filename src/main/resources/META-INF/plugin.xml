@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>com.example.yaml-runner</id>
+    <name>YAML Runner</name>
+    <vendor email="support@example.com" url="http://www.example.com">Example</vendor>
+
+    <description><![CDATA[
+    在YAML文件中添加运行按钮，点击后可以直接运行或调试。
+    ]]></description>
+
+    <!-- 添加IDE兼容性范围 -->
+    <idea-version since-build="221" until-build="243.*"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+    <depends>com.intellij.modules.java</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 运行配置类型 -->
+        <runConfigurationProducer implementation="com.example.yamlrunner.YamlApplicationConfigurationProducer"/>
+
+        <!-- 行标记提供者 -->
+        <runLineMarkerContributor language="yaml" implementationClass="com.example.yamlrunner.YamlRunLineMarkerProvider"/>
+
+    </extensions>
+
+    <actions>
+        <action id="com.example.yamlrunner.RunYamlAction"
+                class="com.example.yamlrunner.RunYamlAction"
+                text="Run YAML Script"
+                description="Run script associated with this YAML file">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenuRunGroup" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="FoldingGroup" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" anchor="last"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

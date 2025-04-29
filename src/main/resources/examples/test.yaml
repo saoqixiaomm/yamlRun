@@ -1,0 +1,38 @@
+name: 测试YAML文件
+version: 1.0
+description: 这是一个用于测试插件的YAML文件
+
+# 测试配置
+config:
+  enabled: true
+  timeout: 30
+  retries: 3
+  
+# 测试参数
+parameters:
+  - name: param1
+    value: value1
+    type: string
+  - name: param2
+    value: 42
+    type: integer
+  - name: param3
+    value: true
+    type: boolean
+    
+# 测试步骤
+steps:
+  - name: 步骤1
+    action: doSomething
+    args:
+      input: ${param1}
+      count: ${param2}
+  - name: 步骤2
+    action: checkResult
+    args:
+      expected: ${param3}
+      
+# 输出配置
+output:
+  format: json
+  destination: console 

@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.15.0'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '2022.3'
+    plugins = ['yaml', 'java']
+}
+
+test {
+    useJUnitPlatform()
+}
+
+patchPluginXml {
+    sinceBuild = '221'
+    untilBuild = '243.*'
+    changeNotes = """
+      支持YAML文件的直接运行和调试，可以调用Java main方法执行YAML文件。
+    """
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.release = 11
+}
