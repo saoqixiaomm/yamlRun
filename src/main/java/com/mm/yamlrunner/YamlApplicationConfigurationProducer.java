@@ -81,6 +81,6 @@ public class YamlApplicationConfigurationProducer extends RunConfigurationProduc
             return false;
         }
         // 简单点：只要是 YAML 文件
-        return element.getContainingFile() != null;
+        return element.getContainingFile().getName().endsWith(".yaml") || element.getContainingFile().getName().endsWith(".yml");
     }
 }
